@@ -52,3 +52,26 @@ insert into Subject values (4,'RDBMS',10,1);
 insert into Mark(subid, sid, mark, examtimes) values (1,1,8,1);
 insert into Mark(subid, sid, mark, examtimes) values (1,2,10,2);
 insert into Mark(subid, sid, mark, examtimes) values (2,1,12,1);
+
+
+select * from Students;
+
+select * from Students
+where status=true;
+
+select * from Subject
+where credit<10;
+
+SELECT S.sID, S.sName, C.cName
+FROM Student S join Class C on S.cID = C.cID;
+
+SELECT S.sID, S.sID, C.cName
+FROM Student S join Class C on S.cID = C.cID
+WHERE C.cName = 'A1';
+
+SELECT S.sID, S.sName, Sub.SubName, M.Mark
+FROM Student S join Mark M on S.sID = M.sID join Subject Sub on M.SubId = Sub.SubId;
+
+SELECT S.sID, S.sName, Sub.SubName, M.Mark
+FROM Student S join Mark M on S.sID = M.sID join Subject Sub on M.SubId = Sub.SubId
+WHERE Sub.SubName = 'CF';
